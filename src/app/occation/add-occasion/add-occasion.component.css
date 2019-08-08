@@ -47,4 +47,6 @@ border-radius: .25rem;
 label{
   margin: 8px;
 }
-
+.float-left{
+float: left
+}

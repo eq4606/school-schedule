@@ -14,7 +14,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AdminGuard } from './guard/admin.guard'
 const ROUTES: Routes = [
   //{path:"i",redirectTo:""},//only for sample
-  { path: "studyTime/:number", component: StudyTimeComponent },
+  { path: "studyTime/:number", component: StudyTimeComponent },//any should be  אוביקט שעת לימוד or id of אוביקט שעת לימוד
   { path: "login", component: LoginComponent },
   { path: "absence-for-tacher/add", component: AddAbsenceComponent ,canActivate:[AdminGuard]},
   { path: "occasion/add", component: AddOccasionComponent ,canActivate:[AdminGuard]},
