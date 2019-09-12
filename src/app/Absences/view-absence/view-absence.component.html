@@ -1,7 +1,13 @@
-<form role="form" >
-<div  class="container">
-  <h2>העדרות למורה</h2>
+
+
+<form>
   
+    <h2>עדכון העדרות למורה</h2>
+    <!-- <div>
+        <label>קוד חיסור</label>
+        <input type="number"  [value]="id">
+    </div>
+     -->
      <div class="form-group">
       <label for="abscentTeacher">מורה חסרה</label>
       <select #abscentTeacher name="abscentTeacher" class="select" [(ngModel)]="teacherId">
@@ -40,17 +46,15 @@
     <p></p>
     <div >
      <label>משיעור</label>
-      <select class="select"  name="fromLesson" [(ngModel)]="fromLesson">
-      <option *ngFor="let lsn of lessons" id="lsn{{lsn.Id}}" name="lsn{{lsn.Id}}" value="{{lsn.Id}}" [(ngModel)]="isCheckedLessons[lsn.Id]">{{lsn.Name}}</option>
+      <select #fromLessonIn class="select"  name="fromLesson" [(ngModel)]="fromLesson">
+      <option *ngFor="let lsn of lessons" [value]="lsn.Id" >{{lsn.Name}}</option>
       </select>
-        <!-- <input type="checkbox" id="{{lsn.Id}}" name="lsn{{lsn.Id}}" value="{{lsn.Id}}" [(ngModel)]="isCheckedLessons[lsn.Id]"> -->
     </div>  
     <div >
         <label>עד שיעור:</label> 
-        <select name="toLesson" [(ngModel)] = "toLesson">
-         <option *ngFor="let lsn of lessons" id="lsn{{lsn.Id}}" name="lsn{{lsn.Id}}" value="{{lsn.Id}}" [(ngModel)]="isCheckedLessons[lsn.Id]">{{lsn.Name}}</option>
+        <select #toLessonIn name="toLesson" [(ngModel)] = "toLesson">
+         <option *ngFor="let lsn of lessons" [value]="lsn.Id" >{{lsn.Name}}</option>
          </select>
-           <!-- <input type="checkbox" id="{{lsn.Id}}" name="lsn{{lsn.Id}}" value="{{lsn.Id}}" [(ngModel)]="isCheckedLessons[lsn.Id]"> -->
        </div>      
   </div>
 
@@ -65,7 +69,6 @@
           </select>
     </div>
 
-    <button type="submit" class="btn btn-default button" (click)="onAddAbsence()">אישור</button>
+    <button type="submit" class="btn btn-default button" (click)="onUpdateAbsence()">עדכון</button>
  
-</div>
- </form>
+</form>
