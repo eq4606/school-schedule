@@ -1,1 +1,24 @@
 <button class="btn btn-success" (click)="navigateToAdd()">הוספת ארוע</button>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">סוג</th>
+        <th scope="col">מתאריך</th>
+        <th scope="col">כיתות</th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let occ of occasions">
+        <th scope="row">{{occ.Id}}</th>
+        <td>{{occ.OccasionTypeName}}</td>
+        <td>{{occ.FromDate.thisDate}}</td>
+        <td>{{occ.Classes}}</td>
+        <td class="table-success center" (click)="navigateToEdit(occ.Id)">עריכה</td>
+        <td class="table-secondary center" (click)="navigateToView(occ.Id)">פרטים מלאים</td>
+      </tr>
+    </tbody>
+  </table>

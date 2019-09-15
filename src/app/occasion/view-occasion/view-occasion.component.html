@@ -1,3 +1,9 @@
 <h2 class="container">ארוע</h2>
-<label for="typeOccasion">סוג ארוע</label>
-<input type="text" id="typeOccasion" name="typeOccasion" [(ngModel)]="typeId">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{occ.Id}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{occ.FromDate.thisDate}}</h6>
+      <p class="card-text">{{occ.OccasionTypeName}}</p>
+      <a (click)="navigateToList()" class="card-link btn btn-secondary">חזרה לרשימה</a>
+    </div>
+  </div>
